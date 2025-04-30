@@ -102,6 +102,15 @@ console.log(numFour); //
 var numFour = 1010; // i declared the var in line 102 and use in line log(numFour) in line 101?
 
 
+// the output result is undefine. Why this happening 
+// let understand the consept of hoisting.
+
+// console.log(numFive, numSix); // output is referrence error because when we use variable in metter of numFive and numSix in compilation phase snd to TDZ and unisilized the value
+
+let numFive = 5;  
+const numSix = 6 
+
+
 
 
 
