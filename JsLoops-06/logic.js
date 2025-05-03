@@ -67,3 +67,13 @@ for(let key in user){
 }
 
 console.log(user['fName']);
+
+let arr = ['a','b','c']
+let itr = arr[Symbol.iterator]();
+
+
+console.log(typeof itr.next().value);
+console.log(itr.next().value);
+console.log(itr.next().value);
+console.log(itr.next().value);
+
