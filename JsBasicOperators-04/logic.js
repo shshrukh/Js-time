@@ -65,7 +65,6 @@ console.log(null === undefined);  // false. === operator check both value and ty
 console.log(NaN === NaN); // false   why false? weird one,  Rule. NaN is not equla to anything, even iteslf
 
 
-console.log(typeof NaN);
 
 
 
