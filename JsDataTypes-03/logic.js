@@ -48,7 +48,7 @@ console.log(datess);
 
 
 // non-primitive data types are store in heep memory 
-console.log(typeof null);
+
 
 
 
