@@ -61,10 +61,4 @@ let massage = age >= 18 ? 'you are adult' : 'hello boy/girl';
 
 console.log(massage);
 
-if ('0'){
-    console.log('0 is working?');
-    
-}else{
-    console.log('not working');
-    
-}
+
