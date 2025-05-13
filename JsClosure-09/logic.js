@@ -58,5 +58,32 @@ console.log(atm.withdraw(112,50));
 console.log(atm.withdraw(112,50));
 
 
+//  A function that remember its lexical scope, even when the function is exicuted outside
+// of its original scope 
+
+function abc(){
+    let fName = "shahrukh"
+    function efg(){
+        let lName = 'arbaz';
+        function hij (){
+            fullName = fName+" "+lName;
+            return fullName;
+        }
+        return hij
+    } 
+    return efg
+}
+let addingName = abc();
+let gettinName = addingName();
+console.log(gettinName());
+
+
+
+
+
+
+
+
+
 
 
