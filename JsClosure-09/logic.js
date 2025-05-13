@@ -83,6 +83,34 @@ function abc(){
 // instead of stroing in variables we can call closure 
 console.log(abc()()());
 
+// closure exampe for numbers can closure cache the varibel values or not?
+
+
+
+function outerFunction(){
+    let myNumOne = 0;
+    function innerFunction(){
+        myNumOne += 5; // here the MyNumOnne = 5
+        function nestedFunction(){
+            myNumOne++ // incr the value of MyNumOne = 6
+            return myNumOne; // here the value of MyNumOne = 6
+        }
+        return nestedFunction;
+    }
+    return innerFunction
+
+}
+
+
+const res = outerFunction();
+const res2 = res();
+console.log(res2());
+console.log(res2());
+console.log(res2());
+
+
+
+
 
 
 
