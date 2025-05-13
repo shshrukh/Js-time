@@ -20,3 +20,23 @@ function outer() {
 
 const callHero = outer();
 callHero();
+
+
+const numOne = 1;
+
+
+function funOne( ){
+    const numOne = 2;
+    console.log('here the number is ', numOne );
+    function funTwo () {
+        const numTwo = 12;
+        
+        function funThree(){
+            return `here the number is ${numTwo}`;
+        }
+        return funThree()
+    }
+    return funTwo()
+}
+const value = funOne();
+console.log(value);
