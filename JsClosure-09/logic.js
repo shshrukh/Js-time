@@ -61,6 +61,9 @@ console.log(atm.withdraw(112,50));
 //  A function that remember its lexical scope, even when the function is exicuted outside
 // of its original scope 
 
+
+// some nested closure in js 
+
 function abc(){
     let fName = "shahrukh"
     function efg(){
@@ -73,9 +76,13 @@ function abc(){
     } 
     return efg
 }
-let addingName = abc();
-let gettinName = addingName();
-console.log(gettinName());
+// let addingName = abc();
+// let gettinName = addingName();
+// console.log(gettinName());
+
+// instead of stroing in variables we can call closure 
+console.log(abc()()());
+
 
 
 
