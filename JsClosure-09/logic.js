@@ -109,13 +109,34 @@ console.log(res2());
 console.log(res2());
 
 
+// some challenge of closures
+// makeing a function take a input callback return a new function 
 
 
 
+function once(cb) {
+  let called = false;   // Track if the function has already run
+  let result;           // Store the result of the first call
 
+  return function () {
+    if (!called) {
+      result = cb();    // Run and store the result
+      called = true;    // Mark as already called
+    }
+    return result;      // Return stored result every time
+  };
+}
 
+function login() {
+  console.log("🔐 Logging in...");
+  return "Welcome!";
+}
 
+const loginOnce = once(login);
 
+console.log(loginOnce()); // 🔐 Logging in... → "Welcome!"
+console.log(loginOnce()); // (No log) → "Welcome!"
+console.log(loginOnce()); // (No log) → "Welcome!"
 
 
 
