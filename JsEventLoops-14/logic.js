@@ -32,7 +32,7 @@ console.log('print C')
 
 console.log('this start form point A');
 
-setTimeout(()=>{console.log('this is the point C')},5000);
+setTimeout(()=>{console.log('this is the point C')},0);
 
 Promise.resolve().then(()=>{console.log('this is the point B')});
 
@@ -42,3 +42,9 @@ for(let i = 0; i < 100; i++){
 }
 
 console.log('this is the point E');
+
+
+function loop(){
+    console.log('hello from loop')
+}
+loop();
