@@ -14,3 +14,31 @@ console.log('print A');
 setTimeout(()=>{console.log(('print B form event loop'))},5000);
 
 console.log('print C')
+
+
+// Async code are pushed to queues and handel later.
+
+// There are two type of Queues
+
+//1. Microtask Queue
+
+// Microtask Queue runs immediately afer the call stack is empty.
+
+//2. Macrotask Queue
+
+// run after when mirotask have been cleared.
+
+
+
+console.log('this start form point A');
+
+setTimeout(()=>{console.log('this is the point C')},5000);
+
+Promise.resolve().then(()=>{console.log('this is the point B')});
+
+
+for(let i = 0; i < 100; i++){
+    console.log(i,'this is the point D');
+}
+
+console.log('this is the point E');
