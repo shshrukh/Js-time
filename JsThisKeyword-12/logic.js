@@ -40,8 +40,6 @@ let userOne ={
 
 console.log(userOne.method()());
 
-// This value in Constructor function;
-// first clear the construnctur function and will continoue this topic  
 
 
 
@@ -54,7 +52,4 @@ console.log(userOne.method()());
 
 
 
-
-
-console.log(typeof []);
 
