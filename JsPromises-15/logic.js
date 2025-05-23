@@ -4,50 +4,38 @@
 
 // Promise have theree states 1.pending 2.fullfill 3.reject
 
-const promise = new Promise((res,rej)=>{
-    if(false){
-        console.log('i complet my promise');
-        
-    }else{
-        console.log('sorry i didnt complet my promise');
-    }
+//new Promise() → PENDING
+//    │
+//    ├─ resolve() → FULFILLED → .then()
+//    └─ reject()  → REJECTED  → .catch()
+
+
+// const MyPromice01 = new Promise((resolve, reject)=>{
+//     setTimeout(()=>{
+//         resolve(10)
+//     },8000)
+// });
+// One more important thing about promises let we have a function the block of function not exicute untill
+// we dont call function but when we create a promise with new keyword its exicute 
+
+
+const MyPromise02 = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        resolve(10)
+    },2000)
 });
-
-console.log(promise);
-
-
-const fatch = ()=>{
-    return new Promise ((res, rej)=>{
-        setTimeout(()=>{
-            if(true){
-                res('facthing apis successfuly')
-            }else{
-                rej('soory server is down');  
-            }
-        },2000)
+MyPromise02
+    .then((result)=>{
+        console.log('step 1',result);
+        return result *2
     })
-}
-
-// after creationg promise we have to cunsume the promise
-
-
-fatch()
-    .then((data)=>{console.log(data)})
-    .catch((err)=>{console.log(err)});
-
-// Real-world example: Call API.
-
-function fatchData(){
-    return new Promise((res,rej)=>{
-        setTimeout(()=>{
-            const data = {fName : "abc"};
-            res(data);
-        },2000)
+    .then((result)=>{
+        console.log('step 2', result);
+        return result + 5;
     })
-}
-fatchData()
-    .then(data => console.log(data))
-    .catch(err=> console.log(err))
-
-
-
+    .then((result)=>{
+        console.log('step 3', result);
+        
+    })
+    .catch((err)=>{console.log(err);
+    })
