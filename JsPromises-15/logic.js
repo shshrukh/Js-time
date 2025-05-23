@@ -39,3 +39,19 @@ MyPromise02
     })
     .catch((err)=>{console.log(err);
     })
+
+    // let says we have multipla promise in and we have a method Promise.all()
+
+    const promiseOne = new Promise ((resolve)=>{setTimeout(()=>{resolve(1)},2000)}); 
+    const promiseTwo = new Promise ((resolve)=>{setTimeout(()=>{resolve(2)},3000)}); 
+    const promiseThree = new Promise ((resolve)=>{setTimeout(()=>{resolve('hi')},1000)});
+    const promiseFour = new Promise ((resolve,reject)=>{setTimeout(()=>{reject('rejected')},3000)})
+    
+    Promise.all([promiseOne, promiseTwo, promiseThree])
+        .then(data=>console.log(data))
+        .catch(err=>console.log(err))
+
+
+    Promise.all([promiseOne,promiseFour, promiseThree])
+        .then(data=>console.log(data, 'this is data massage'))
+        .catch(err=>console.log(err,'this is err massage'))
