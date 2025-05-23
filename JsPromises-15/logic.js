@@ -10,11 +10,11 @@
 //    └─ reject()  → REJECTED  → .catch()
 
 
-// const MyPromice01 = new Promise((resolve, reject)=>{
-//     setTimeout(()=>{
-//         resolve(10)
-//     },8000)
-// });
+const MyPromice01 = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        resolve(10)
+    },8000)
+});
 // One more important thing about promises let we have a function the block of function not exicute untill
 // we dont call function but when we create a promise with new keyword its exicute 
 
@@ -55,3 +55,30 @@ MyPromise02
     Promise.all([promiseOne,promiseFour, promiseThree])
         .then(data=>console.log(data, 'this is data massage'))
         .catch(err=>console.log(err,'this is err massage'))
+
+const promiseFive = new Promise((res, rej)=>{setTimeout(()=>{res(2)},4000)})
+const promiseSix = new Promise((res, rej)=>{setTimeout(()=>{res(4)},2000)})
+
+
+//Promise.any() is a method thet return the promise that we have multiple promise thet resolve
+
+Promise.race([promiseFive, promiseSix])
+    .then((data)=>{console.log(data);
+    })
+    .catch((err)=>{console.log(err);
+    })
+
+
+Promise.any([promiseFour,promiseFive])
+    .then((data)=>{console.log(data);
+    })
+    .catch((err)=>{console.log(err);
+    })
+
+
+
+
+// Promise.allSettled() take a itterable promise and return a single promise 
+
+Promise.allSettled([promiseFour,promiseFive])
+    .then((data)=>{console.log(data)})
