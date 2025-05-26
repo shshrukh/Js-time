@@ -82,3 +82,28 @@ Promise.any([promiseFour,promiseFive])
 
 Promise.allSettled([promiseFour,promiseFive])
     .then((data)=>{console.log(data)})
+
+
+                                        // Async / Await
+
+// we declear the async function by putting the asyn key word brefor the function keyword.
+// An async function can always return the promise.
+// If the functon return the non-promise value, async will wrap it in a resolved Promise.
+//If the function throw an error, async will wrap it in a rejected value.
+
+// the await keyword is only be used inside async function .
+//it pause the exuction of the async function untill the promise its waiting on settles(resolves, rejects);
+// if the promise resolve await return the resolve value
+//if the promise reject await return the reject value.
+
+
+function fetchDataUser (){
+    return new Promise((res)=>{
+        setTimeout(()=>{
+            res({userName: 'shahrukh arbaz', age: 26})
+        },3000) 
+    })
+    const data = await.fetchDataUser()
+}
+
+
